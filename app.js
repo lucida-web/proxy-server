@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3030;
 const http = require('http')
 
 http.createServer((req, res) => {
-        if(req.url === "/request"){
+        if(req.url === "/"){
             apiCallFromRequest.callApi(function(response){
                 //console.log(JSON.stringify(response));
                 res.write(JSON.stringify(response));
