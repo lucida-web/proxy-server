@@ -1,7 +1,7 @@
 const apiCallFromRequest = require('./Request')
 const apiCallFromNode = require('./NodeJsCall')
-const hostname = '0.0.0.0';
-const port = 8000;
+// const hostname = '0.0.0.0';
+const PORT = process.env.PORT || 3030;
 const http = require('http')
 
 http.createServer((req, res) => {
@@ -20,6 +20,7 @@ http.createServer((req, res) => {
         }
         
         // res.end();
-}).listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+}).listen(PORT, () => {
+    console.log(`Server running at ${PORT}`);
   });
+
