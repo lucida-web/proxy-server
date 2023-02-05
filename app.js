@@ -1,25 +1,11 @@
-const apiCallFromNode = require('./NodeJsCall')
-// const hostname = '0.0.0.0';
-const PORT = process.env.PORT || 3030;
-const http = require('http')
+var express = require('express'),
+    request = require('request');
 
-http.createServer((req, res) => {
-        if(req.url === "/"){
-            apiCallFromRequest.callApi(function(response){
-                //console.log(JSON.stringify(response));
-                res.write(JSON.stringify(response));
-                res.end();
-            });
-        }
-        else if(req.url === "/"){
-            apiCallFromNode.callApi(function(response){
-                res.write(response);
-                res.end();
-            });
-        }
-        
-        // res.end();
-}).listen(PORT, () => {
-    console.log(`Server running at ${PORT}`);
-  });
+var app = express();  
 
+// Forward all requests from /api to http://foo.com/api
+app.use('https://www.googleapis.com/customsearch/v1?key=AIzaSyDV1joihnXLW7kB1V_rcYdJKBgvqjhZm4E&cx=018358168972005499115:qievzugb09r&q=children%20enjoy%20stories%20%20%20%20&start=1&searchType=image&imgSize=large&imgColorType=trans', function(req, res) {
+  req.pipe(request("http://foo.com/api" + req.url)).pipe(res);
+});
+
+app.listen(process.env.PORT || 3000);
