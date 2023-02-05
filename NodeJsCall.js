@@ -1,7 +1,7 @@
 
 const https = require('https');
  
-_EXTERNAL_URL = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCsECJAADGD61ihtTGrCxynnr2hoQL87Bk&cx=018358168972005499115:qievzugb09r&q=children%20enjoy%20stories%20%20%20%20&start=1&searchType=image&imgSize=large&imgColorType=trans';
+_EXTERNAL_URL = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyBziv9SfQekuxDylg1pK-SedvbN6OuIbfc&cx=018358168972005499115:qievzugb09r&q=children%20enjoy%20stories%20%20%20%20&start=1&searchType=image&imgSize=large&imgColorType=trans';
 
 
 const callExternalApiUsingHttp = (callback) => {
