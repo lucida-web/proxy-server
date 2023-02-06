@@ -1,25 +1,11 @@
 {
-  "name": "call-external-api",
-  "version": "1.0.0",
-  "description": "learn how to call an external api using node js.",
-  "main": "app.js",
-  "scripts": {
-    "test": "node app.js"
-  },
-  "keywords": [
-    "nodejs",
-    "api",
-    "call",
-    "rest",
-    "martand",
-    "singh",
-    "node",
-    "web",
-    "api"
-  ],
-  "author": "Martand Singh (sniffer)",
-  "license": "MIT",
+  "name": "CorsProxy",
+  "description": "Simple Cors Proxy",
+  "version": "0.0.1",
+  "private": true,
   "dependencies": {
-    "request": "^2.87.0"
+    "express": "~4.4.3",
+    "request": "~2.36.0",
+    "body-parser": "~1.5.2"
   }
 }
