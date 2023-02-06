@@ -1,25 +1,13 @@
-const express = require('express');
-const request = require('request');
-
-const app = express();
-
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-
-app.get('/jokes/random', (req, res) => {
-  request(
-    { url: 'https://joke-api-strict-cors.appspot.com/jokes/random' },
-    (error, response, body) => {
-      if (error || response.statusCode !== 200) {
-        return res.status(500).json({ type: 'error', message: err.message });
-      }
-
-      res.json(JSON.parse(body));
-    }
-  )
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`listening on ${PORT}`));
+var express = require('express'); 
+var request = require('request'); 
+var app = express();
+app.get('', function(req, res){ 
+    request('https://www.googleapis.com/customsearch/v1?key=AIzaSyDV1joihnXLW7kB1V_rcYdJKBgvqjhZm4E&cx=018358168972005499115:qievzugb09r&q=children%20enjoy%20stories%20%20%20%20&start=1&searchType=image&imgSize=large&imgColorType=trans' , function (error, response, body) { 
+      if (!error && response.statusCode === 200) { 
+        console.log(body); 
+        res.send(body); 
+      } 
+     }); 
+  });
+app.listen(3000); 
+console.log('Server running on port %d', 3000);
