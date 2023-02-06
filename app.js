@@ -3,7 +3,11 @@ const apiCallFromRequest = require('./Request')
 const apiCallFromNode = require('./NodeJsCall')
 
 const http = require('http')
-const PORT = process.env.PORT || 3030;
+// const PORT = process.env.PORT || 3030;
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 http.createServer((req, res) => {
         if(req.url === "/request"){
             apiCallFromRequest.callApi(function(response){
@@ -20,9 +24,10 @@ http.createServer((req, res) => {
         }
         
         // res.end();
-}).listen(PORT, () => {
-    console.log(`server started on port ${PORT}`);
-  });
+        
+})
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
 // =======
 // var express = require('express'); 
 // var request = require('request'); 
