@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const apiCallFromRequest = require('./Request')
 const apiCallFromNode = require('./NodeJsCall')
 
