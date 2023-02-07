@@ -9,7 +9,6 @@ app.use((req, res, next) => {
   res.header ('Access-Control-Allow-Headers', 'Content-Type')
   next();
 });
-
 app.get('/app', (req, res) => {
   request(
     { url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCwmKW7QYlbXXyWkccVee0-bX62qc1XJyk&cx=62cecb2eb67704263&start="+start+"&q=" +query +"&callback=hndlr' },
