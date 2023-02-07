@@ -31,7 +31,7 @@ const express = require('express');
 const app = express();
 
 app.get("/", (req, res) => {
-    axios.get('https://www.googleapis.com/customsearch/v1?key=AIzaSyCLNZCmP_Wkf6mg_E_QjFLb8V5DlYdTbag&cx=018358168972005499115:qievzugb09r&"&q="')
+    axios.get('https://www.googleapis.com/customsearch/v1?key=AIzaSyCLNZCmP_Wkf6mg_E_QjFLb8V5DlYdTbag&cx=018358168972005499115:qievzugb09r&"&q=" +query')
         .then(function (response) {
             res.send(response.data);
         })
