@@ -29,6 +29,7 @@
 // const PORT = process.env.PORT || 3000;
 // app.listen(PORT, () => console.log(`listening on ${PORT}`));
 
+//{ url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCwmKW7QYlbXXyWkccVee0-bX62qc1XJyk&cx=018358168972005499115:qievzugb09r&q=children%20enjoy%20stories%20%20%20%20&start=1&searchType=image&imgSize=large&imgColorType=trans' },
 
 const express = require('express');
 const request = require('request');
@@ -44,7 +45,7 @@ app.use((req, res, next) => {
 
 app.get('/app', (req, res) => {
   request(
-    { url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCwmKW7QYlbXXyWkccVee0-bX62qc1XJyk&cx=018358168972005499115:qievzugb09r&q=children%20enjoy%20stories%20%20%20%20&start=1&searchType=image&imgSize=large&imgColorType=trans' },
+    { url: 'https://www.googleapis.com/customsearch/v1?parameters' },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: err.message });
