@@ -12,7 +12,7 @@ app.use((req, res, next) => {
 
 app.get('/app', (req, res) => {
   request(
-    { url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCwmKW7QYlbXXyWkccVee0-bX62qc1XJyk&cx=76095eabd52574cce&start="+start+"&q=" +query +"&callback=hndlr' },
+    { url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCwmKW7QYlbXXyWkccVee0-bX62qc1XJyk&cx=62cecb2eb67704263&start="+start+"&q=" +query +"&callback=hndlr' },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: err.message });
