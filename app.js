@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 
 app.get('/app', (req, res) => {
   request(
-    { url: 'https://www.googleapis.com/customsearch/v1' },
+    { url: 'https://www.google.com/search?q=' },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: err.message });
