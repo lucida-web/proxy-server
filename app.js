@@ -7,7 +7,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post('/app', (req, res) => {
+app.get('/app', (req, res) => {
   request(
     { url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyCwmKW7QYlbXXyWkccVee0-bX62qc1XJyk&cx=76095eabd52574cce&start="+start+"&q=" +query +"&callback=hndlr' },
     (error, response, body) => {
