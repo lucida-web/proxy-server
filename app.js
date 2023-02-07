@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 
 app.get('/app', (req, res) => {
   request(
-    { url: 'https://static.jojowiki.com/images/thumb/f/fd/latest/20221008023104/Sun_Infobox_Anime.png/400px-Sun_Infobox_Anime.png' },
+    { url: ''https://www.googleapis.com/customsearch/v1' },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: err.message });
