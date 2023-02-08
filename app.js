@@ -36,9 +36,9 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/jokes/random', (req, res) => {
+app.get('/api', (req, res) => {
   request(
-    { url: 'https://joke-api-strict-cors.appspot.com/jokes/random' },
+    { url: 'www.google.com' },
     (error, response, body) => {
       if (error || response.statusCode !== 200) {
         return res.status(500).json({ type: 'error', message: err.message });
