@@ -39,7 +39,7 @@ const app = express();
 
 app.get("/", (req, res) => {
 //     axios.get('https://www.google.com/search&"&q=" +query')
-    axios.get('ttps://www.adaliaconfidenceandsuccessblog.com/wp-content/uploads/2014/04/rejection-quote.png')
+    axios.get('https://www.adaliaconfidenceandsuccessblog.com/wp-content/uploads/2014/04/rejection-quote.png')
         .then(function (response) {
             res.send(response.data);
         })
