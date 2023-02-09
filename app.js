@@ -31,22 +31,32 @@ const request = require('request');
 
 const app = express();
 
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   next();
+// });
+
+// app.get('/api', (req, res) => {
+//   request(
+//     { url: 'www.google.com' },
+//     (error, response, body) => {
+//       if (error || response.statusCode !== 200) {
+//         return res.status(500).json({ type: 'error', message: err.message });
+//       }
+
+//       res.json(JSON.parse(body));
+//     }
+//   )
+// });
+
+
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
-
-app.get('/api', (req, res) => {
-  request(
-    { url: 'www.google.com' },
-    (error, response, body) => {
-      if (error || response.statusCode !== 200) {
-        return res.status(500).json({ type: 'error', message: err.message });
-      }
-
-      res.json(JSON.parse(body));
-    }
-  )
+  const allowedOrigins = ['www.dev.pm-lucida.com'];
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  return next();
 });
 
 const PORT = process.env.PORT || 3000;
