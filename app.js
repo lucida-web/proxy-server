@@ -10,5 +10,14 @@ app.use((req, res, next) => {
   return next();
 });
 
+app.get('/', (request, response) => {
+  response.json([
+    { id: 546, username: 'John' },
+    { id: 894, username: 'Mary' },
+    { id: 326, username: 'Jane' }
+  ]);
+});
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`listening on ${PORT}`));
