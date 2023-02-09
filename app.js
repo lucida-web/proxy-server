@@ -11,7 +11,7 @@ app.use((req, res, next) => {
      //res.setheader ('Access-Control-Allow-Headers', 'Content-Type', 'application/json')
      //res.setHeader('Content-Type', 'application/json');
      res.setHeader('Content-Type', 'image/png');
-     res.send(JSON.stringify(req.body));
+     //res.send(JSON.stringify(req.body));
      
   return next();
 });
@@ -23,7 +23,8 @@ app.get('/', function(req, res){
   request('https://www.googleapis.com/customsearch/v1?key=AIzaSyCCBcF4NNB9nQcwXJogsXAudlNvlYO1-8o&cx=018358168972005499115:qievzugb09r&q=" +query +"&callback=hndlr', function (error, response, body) { 
     if (!error && response.statusCode === 200) { 
       console.log(body); 
-      res.send(body); 
+      //res.send(body); 
+       res.send(JSON.stringify(req.body));
     } 
    }); 
 });
