@@ -8,8 +8,8 @@ app.use((req, res, next) => {
      res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Accept');
      res.header('Access-Control-Allow-Credentials', true)
      res.header ('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS')
-     res.setheader ('Access-Control-Allow-Headers', 'Content-Type','image/*')
-//   res.setHeader('Content-Type', 'text','text/plain','text/json','text/png','text/html');
+     res.setheader ('Access-Control-Allow-Headers', 'Content-Type','image/html')
+     res.setHeader('Content-Type', 'text/html');
      res.send(JSON.stringify(req.body));
      
   return next();
