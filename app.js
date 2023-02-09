@@ -9,9 +9,12 @@ app.use((req, res, next) => {
      res.header ('Access-Control-Allow-Headers', 'Content-Type','application/x-www-form-urlencoded')
   return next();
 });
+String key="AIzaSyCpUz4HW_dBfwtOvnCzZsLaK0bncUOu78Y";
+String qry="queries";
+String cx = "018358168972005499115:qievzugb09r";
 
 app.get('/', function(req, res){ 
-  request('https://www.googleapis.com/customsearch/v1?key=AIzaSyCpUz4HW_dBfwtOvnCzZsLaK0bncUOu78Y&cx=018358168972005499115:qievzugb09r&q=', function (error, response, body) { 
+  request('https://www.googleapis.com/customsearch/v1?key="+key+"&cx="+cx+"&q="+ qry +"&alt=json&queriefields=queries(request(totalResults))"', function (error, response, body) { 
     if (!error && response.statusCode === 200) { 
       console.log(body); 
       res.send(body); 
