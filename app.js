@@ -19,16 +19,25 @@ app.use((req, res, next) => {
 // String qry="queries";
 // String cx = "018358168972005499115:qievzugb09r";
 
-app.get('/', function(req, res){ 
-  request('https://www.googleapis.com/customsearch/v1?key=AIzaSyCCBcF4NNB9nQcwXJogsXAudlNvlYO1-8o&cx=018358168972005499115:qievzugb09r&q=" +query +"&callback=hndlr', function (error, response, body) { 
-    if (!error && response.statusCode === 200) { 
-      console.log(body); 
-        res.send(body); 
-       //res.send(JSON.stringify(req.body));
-    } 
-   }); 
-});
+// app.get('/', function(req, res){ 
+//   request('https://www.googleapis.com/customsearch/v1?key=AIzaSyCCBcF4NNB9nQcwXJogsXAudlNvlYO1-8o&cx=018358168972005499115:qievzugb09r&q=" +query +"&callback=hndlr', function (error, response, body) { 
+//     if (!error && response.statusCode === 200) { 
+//       console.log(body); 
+//         res.send(body); 
+//        //res.send(JSON.stringify(req.body));
+//     } 
+//    }); 
+// });
 
+
+app.get('/', function(req, res) {
+    var url = proxiedURL +"?" + querystring.stringify(req.query);
+    logger.info('/', URL); 
+    fetch(url).then(actual => {
+       actual.headers.forEach((v, n) => res.setHeader(n, v));
+       actual.body.pipe(res);
+    });
+});
 
 
 
