@@ -11,7 +11,7 @@ app.use((req, res, next) => {
      //res.setheader ('Access-Control-Allow-Headers', 'Content-Type', 'application/json')
      res.setHeader('Content-Type', 'application/json');
 //      res.setHeader('Content-Type', 'image/png');
-     res.send(JSON.stringify(req.body));
+//      res.send(JSON.stringify(req.body));
      
   return next();
 });
