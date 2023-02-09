@@ -51,7 +51,7 @@ const app = express();
 
 
 app.use((req, res, next) => {
-  const allowedOrigins = ['www.dev.pm-lucida.com'];
+  const allowedOrigins = ['http://localhost:4200/'];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
