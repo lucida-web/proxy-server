@@ -22,8 +22,19 @@ app.use((req, res, next) => {
 //    }); 
 // });
 
+// app.get('/', function(req, res){ 
+//   request('https://www.googleapis.com/customsearch/v1?key=AIzaSyCpUz4HW_dBfwtOvnCzZsLaK0bncUOu78Y&cx=018358168972005499115:qievzugb09r&q=sun&start=1&searchType=image&imgSize=large&imgColorType=trans', function (error, response, body) { 
+//     if (!error && response.statusCode === 200) { 
+//       console.log(body); 
+//       res.send(body); 
+//     } 
+//    }); 
+// });
+
+const apiKey ='AIzaSyCpUz4HW_dBfwtOvnCzZsLaK0bncUOu78Y';
+const cx = '018358168972005499115:qievzugb09r';
 app.get('/', function(req, res){ 
-  request('https://www.googleapis.com/customsearch/v1?key=AIzaSyCpUz4HW_dBfwtOvnCzZsLaK0bncUOu78Y&cx=018358168972005499115:qievzugb09r&q=sun&start=1&searchType=image&imgSize=large&imgColorType=trans', function (error, response, body) { 
+  request('https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx}&q=${encodeURIComponent(query)}&start=${start}', function (error, response, body) { 
     if (!error && response.statusCode === 200) { 
       console.log(body); 
       res.send(body); 
